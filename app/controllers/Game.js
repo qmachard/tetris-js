@@ -18,6 +18,7 @@ class Game {
 
 		var self = this;
 		this.frames = setInterval(function() { self.frame(); }, 1000);
+
 		this.controls();
 	}
 
@@ -28,8 +29,14 @@ class Game {
 			this.element.render();
 			this.board.addBricks(this.element);
 
+			var lignes = this.board.removeLines();
+			if(lignes > 0) {
+				console.log('Lignes', lignes);
+			}
+
 			this.element = new Element();
 		}
+
 
 		this.element.render();
 	}
