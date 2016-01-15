@@ -1,9 +1,9 @@
 .game {
 	position: relative;
 	background: #0087B4;
-	height: 100%;
-	width: 100%;
-	margin: auto;
+	height: 600px;
+	width: 400px;
+	margin: 20px auto;
 	overflow: hidden;
 	cursor:none;
 
@@ -16,12 +16,13 @@
 		z-index:3;
 	}
 
-	.snake_element {
+	.element {
 		position: absolute;
 		height: $sizeCase;
 		width: $sizeCase;
 		background: #F0F0F0;
 		border-radius:5px;
+		border:1px solid #0087B4;
 		z-index: 3;
 	}
 
