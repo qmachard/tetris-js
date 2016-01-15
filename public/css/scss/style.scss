@@ -1,0 +1,11 @@
+// Bases
+@import "bases/reset";
+@import "bases/helpers";
+
+// Config
+@import "config/config";
+
+// Modules
+@import "modules/game";
+@import "modules/score";
+@import "modules/splash";
