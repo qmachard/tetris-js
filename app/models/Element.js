@@ -3,10 +3,10 @@
  */
 class Element {
 	constructor() {
-		this.domElements = [];
+		this.bricks = [];
 		this.form = null;
 
-		this.position = {x:0, y:0};
+		this.position = {x:5, y:-1};
 
 		this.rotation = 0;
 
@@ -87,7 +87,7 @@ class Element {
 			var square = document.createElement('span');
 			square.className = 'element';
 			document.getElementById('elements').appendChild(square);
-			this.domElements.push(square);
+			this.bricks.push(square);
 		}
 
 		this.form = this.forms[Math.floor(Math.random() * (this.forms.length))];
@@ -95,28 +95,24 @@ class Element {
 
 	rotate() {
 		this.rotation = ++this.rotation % this.form.length;
-		this.render();
 	}
 
 	moveDown() {
 		this.position.y++;
-		this.render();
 	}
 
 	moveLeft() {
 		this.position.x--;
-		this.render();
 	}
 
 	moveRight() {
 		this.position.x++;
-		this.render();
 	}
 
 	render() {
 		for(var i=0; i<4; i++) {
-			this.domElements[i].style.left = (this.position.x + this.form[this.rotation][i].x) * 20 + 'px';
-			this.domElements[i].style.top = (this.position.y + this.form[this.rotation][i].y) * 20 + 'px';
+			this.bricks[i].style.left = (this.position.x + this.form[this.rotation][i].x) * 20 + 'px';
+			this.bricks[i].style.top = (this.position.y + this.form[this.rotation][i].y) * 20 + 'px';
 		}
 	}
 }

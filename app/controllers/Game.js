@@ -15,25 +15,23 @@ class Game {
 
 	init() {
 		this.element = new Element();
-		this.
 
-		this.element.render();
-
-		this.startInterval();
+		var self = this;
+		this.frames = setInterval(function() { self.frame(); }, 1000);
 		this.controls();
 	}
 
-	startInterval() {
-		var self = this;
-		this.frames = setInterval(function() { self.frame(); }, 500);
-	}
-
-	stopInterval() {
-		clearInterval(this.frames);
-	}
-
 	frame() {
-		this.element.moveDown();
+		if(this.board.canMove(this.element, { x: 0, y: 1 })) {
+			this.element.moveDown()
+		} else {
+			this.element.render();
+			this.board.addBricks(this.element);
+
+			this.element = new Element();
+		}
+
+		this.element.render();
 	}
 
 	controls() {
@@ -47,19 +45,29 @@ class Game {
 						self.start();
 						break;
 					case 37: // Gauche
-						self.element.moveLeft();
+						if(self.board.canMove(self.element, { x: -1, y: 0 })) {
+							self.element.moveLeft();
+							self.element.render();
+						}
 						break;
 					case 38: // Haut
-						//self.stopInterval();
-						self.element.rotate();
-						//self.startInterval();
+						if(self.board.canRotate(self.element)) {
+							self.element.rotate();
+							self.element.render();
+						}
+
 						break;
 					case 39: // Droite
-
-						self.element.moveRight();
+						if(self.board.canMove(self.element, { x: 1, y: 0 })) {
+							self.element.moveRight();
+							self.element.render();
+						}
 						break;
 					case 40: // Bas
-						self.element.moveDown();
+						if(self.board.canMove(self.element, { x: 0, y: 1 })) {
+							self.element.moveDown();
+							self.element.render();
+						}
 						break;
 				}
 			}
