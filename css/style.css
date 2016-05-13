@@ -1,0 +1,113 @@
+/* line 1, scss/bases/_reset.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 1, scss/bases/_helpers.scss */
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #F0F0F0;
+}
+
+/* line 6, scss/bases/_helpers.scss */
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 300;
+}
+
+/* line 12, scss/bases/_helpers.scss */
+p {
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+/* line 18, scss/bases/_helpers.scss */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* line 1, scss/modules/_game.scss */
+.game {
+  position: relative;
+  background: #0087B4;
+  height: 600px;
+  width: 400px;
+  margin: 20px auto;
+  overflow: hidden;
+  cursor: none;
+}
+/* line 10, scss/modules/_game.scss */
+.game .snack {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #F0F0F0;
+  border-radius: 50%;
+  z-index: 3;
+}
+/* line 19, scss/modules/_game.scss */
+.game .element {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #F0F0F0;
+  border-radius: 5px;
+  border: 1px solid #0087B4;
+  z-index: 3;
+}
+/* line 29, scss/modules/_game.scss */
+.game .score {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  line-height: 200px;
+  font-size: 200px;
+  color: #00658c;
+  font-weight: bold;
+  margin-top: -100px;
+  text-align: center;
+}
+
+/* line 1, scss/modules/_splash.scss */
+.splash {
+  position: absolute;
+  display: table;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+/* line 12, scss/modules/_splash.scss */
+.splash_content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* line 22, scss/modules/_splash.scss */
+.splash_button {
+  height: 50px;
+  width: 200px;
+  border: 3px solid #FFFFFF;
+  color: #FFFFFF;
+  background: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+/* line 32, scss/modules/_splash.scss */
+.splash_button:hover {
+  cursor: pointer;
+}
