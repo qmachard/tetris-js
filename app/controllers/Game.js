@@ -2,11 +2,13 @@
 
 import Element from "../models/Element.js";
 import Board from "../models/Board.js";
+import Score from "../models/Score.js";
 
 class Game {
 	constructor() {
 		this.element = new Element();
 		this.board = new Board();
+		this.score = new Score();
 
 		this.domElement = document.getElementById('game');
 
@@ -29,9 +31,9 @@ class Game {
 			this.element.render();
 			this.board.addBricks(this.element);
 
-			var lignes = this.board.removeLines();
-			if(lignes > 0) {
-				console.log('Lignes', lignes);
+			var lines = this.board.removeLines();
+			if(lines > 0) {
+				this.score.increment(lines);
 			}
 
 			this.element = new Element();

@@ -90,8 +90,8 @@ class Element {
 			this.bricks.push(square);
 		}
 
-		//this.form = this.forms[Math.floor(Math.random() * (this.forms.length))];
-		this.form = this.forms[6];
+		this.form = this.forms[Math.floor(Math.random() * (this.forms.length))];
+		//this.form = this.forms[6];
 	}
 
 	rotate() {
